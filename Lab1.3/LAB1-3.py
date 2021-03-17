@@ -24,9 +24,5 @@ print("--------------------------")
 for r in resultNext:
     for s in r[3]:
         print(s)
-
-
-##  errorIndication, errorStatus, errorIndex, varBindTable = cmdgen.CommandGenerator().nextCmd(
-##  cmdgen.CommunityData('test-agent', 'public'),
-##  cmdgen.UdpTransportTarget(('10.31.70.107', 161)),
-##  ('SNMPv2-MIB', 'sysDescr', 0))
+print("--------------------------")
+# print_snmp(resultNext)

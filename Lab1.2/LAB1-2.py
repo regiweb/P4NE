@@ -1,6 +1,5 @@
 from openpyxl import load_workbook
 from matplotlib import pyplot
-from matplotlib import figure
 # Создаёт таблицу ексель как целое, в качестве аргумента передаётся имя эксель файла.
 # Должен лежать в том же каталоге. Этот объект - словарь.
 wb = load_workbook('data_analysis_lab.xlsx')
@@ -31,7 +30,10 @@ valueTemp = list(map(getvalue, colTemp))
 #Построение графиков (ось X, ось Y, лейбл)
 pyplot.plot(valueYears, valueTemp, label="Temperature")
 pyplot.plot(valueYears, valueSun, label="Sun Activity")
-figure.canvas.set_window_title('Test')
+
+# Название окна
+fig = pyplot.gcf()
+fig.canvas.set_window_title('Dependence of Solar Activity on Temperature from 1900 till 2020')
 
 #Добавляем подписи
 pyplot.xlabel('Years')
@@ -40,5 +42,3 @@ pyplot.legend(loc='upper left')
 
 # Вывод графика
 pyplot.show()
-
-#pyplot.plot(list_x, list_y, label="Метка")  # Построить график по точкам, в первом списке значения по оси X, во втором — значения по оси Y pyplot.show() # показать график
